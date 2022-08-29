@@ -12,6 +12,7 @@ export default function Call({ id }: any) {
   const [channel, setChannel] = useState<string>("");
   const [token, setToken] = useState<string>("");
   const [userid, setuserid] = useState<any>(0);
+  const [agoraUiId, setAgoraUid] = useState<number>(null);
   const router = useRouter();
 
   const getAgoraToken = async () => {
@@ -40,6 +41,7 @@ export default function Call({ id }: any) {
 
       await setChannel(id);
       await setToken(data.token);
+      await setAgoraUid(data.uid);
       await setIsBrowserReady(true);
     } catch (error) {
       console.error(error);
@@ -56,7 +58,7 @@ export default function Call({ id }: any) {
     rtcProps: {
       appId: "4a5e78d97b0748fe8d3e44f42b85f93f",
       channel: id,
-      uid: userid as number,
+      uid: agoraUiId,
       token: token, // pass in channel token if the app is in secure mode
     },
     callbacks: {
