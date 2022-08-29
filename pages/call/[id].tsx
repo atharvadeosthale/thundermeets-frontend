@@ -8,7 +8,8 @@ import { PropsInterface } from "agora-react-uikit";
 import moment from "moment";
 import { toast } from "react-toastify";
 import Layout from "../../components/Layout";
-const AgoraUIKit = dynamic(() => import("agora-react-uikit"), { ssr: false });
+import AgoraUIKit from "agora-react-uikit";
+// const AgoraUIKit = dynamic(() => import("agora-react-uikit"), { ssr: false });
 
 export default function Call({ id }: any) {
   const [isBrowserReady, setIsBrowserReady] = useState<boolean>(false);
