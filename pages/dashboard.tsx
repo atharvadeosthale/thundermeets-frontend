@@ -42,7 +42,7 @@ export default function Dashboard() {
       });
       const res = await axiosInstance.post("/meeting/", body);
       toast.success(
-        `Meeting successfully scheduled! Here's a link to your meeting - http://localhost:3000/call/${channel_name}`
+        `Meeting successfully scheduled! Here's a link to your meeting - https:/thundermeets-frontend.vercel.app/call/${channel_name}`
       );
     } catch (err) {
       console.error(err);
@@ -166,7 +166,7 @@ export default function Dashboard() {
                   CopyLink
                 </button> */}
                 <CopyToClipboard
-                  text={`http://thundermeets-frontend.vercel.app/call/${meeting.channel_name}`}
+                  text={`https://thundermeets-frontend.vercel.app/call/${meeting.channel_name}`}
                   onCopy={() =>
                     toast.success("The Link For The Meeting Is Copied")
                   }
