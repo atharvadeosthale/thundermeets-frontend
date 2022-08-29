@@ -8,8 +8,10 @@ import { PropsInterface } from "agora-react-uikit";
 import moment from "moment";
 import { toast } from "react-toastify";
 import Layout from "../../components/Layout";
-import AgoraUIKit from "agora-react-uikit";
+// import AgoraUIKit from "agora-react-uikit";
 // const AgoraUIKit = dynamic(() => import("agora-react-uikit"), { ssr: false });
+const AgoraUIKit = dynamic(import("agora-react-uikit"), { ssr: false });
+// const AgoraUIKit = import("agora-react-uikit").default;
 
 export default function Call({ id }: any) {
   const [isBrowserReady, setIsBrowserReady] = useState<boolean>(false);
@@ -34,7 +36,7 @@ export default function Call({ id }: any) {
         console.log(agendas);
       });
       // @ts-ignore
-      await agendas.map((agenda, index) => {
+      await agendas?.map((agenda, index) => {
         console.log("I've been sent here");
         //@ts-ignore
         if (agenda?.status == true) return;
