@@ -1,3 +1,4 @@
+// @ts-nocheck
 import axios from "axios";
 
 const base_url = "https://thunder-meets.herokuapp.com";

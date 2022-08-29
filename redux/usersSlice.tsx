@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit";
 import { axiosInstance } from "../api";
 import axios from "axios";

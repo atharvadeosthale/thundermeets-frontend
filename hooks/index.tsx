@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useLayoutEffect } from "react";
 
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
