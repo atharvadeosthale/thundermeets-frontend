@@ -9,8 +9,8 @@ import moment from "moment";
 import { toast } from "react-toastify";
 import Layout from "../../components/Layout";
 // import AgoraUIKit from "agora-react-uikit";
-// const AgoraUIKit = dynamic(() => import("agora-react-uikit"), { ssr: false });
-const AgoraUIKit = dynamic(import("agora-react-uikit"), { ssr: false });
+const AgoraUIKit = dynamic(() => import("agora-react-uikit"), { ssr: false });
+// const AgoraUIKit = dynamic(import("agora-react-uikit"), { ssr: false });
 // const AgoraUIKit = import("agora-react-uikit").default;
 
 export default function Call({ id }: any) {
@@ -106,6 +106,8 @@ export default function Call({ id }: any) {
       console.log(agendaData?.results[0]?.agendas);
       // @ts-ignore
       await setAgendas((agendatemp) => agendaData?.results[0]?.agendas);
+
+      return () => {};
     } catch (error) {
       console.error(error);
       alert("Error joining the meeting, please reload or try again later.");
@@ -116,7 +118,9 @@ export default function Call({ id }: any) {
   //   getAgoraToken();
   // }, []);
   // @ts-ignore
-  useEffect(() => getAgoraToken, []);
+  useEffect(() => {
+    getAgoraToken();
+  }, []);
   useEffect(checkAgendaTime, [agendas]);
 
   const props: PropsInterface = {
