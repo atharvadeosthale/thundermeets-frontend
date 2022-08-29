@@ -42,7 +42,14 @@ export default function Dashboard() {
       });
       const res = await axiosInstance.post("/meeting/", body);
       toast.success(
-        `Meeting successfully scheduled! Here's a link to your meeting - https:/thundermeets-frontend.vercel.app/call/${channel_name}`
+        <div>
+          {" "}
+          <a
+            href={`https://thundermeets-frontend.vercel.app/call/${channel_name}`}
+          >
+            Link To The Meeting
+          </a>
+        </div>
       );
     } catch (err) {
       console.error(err);
