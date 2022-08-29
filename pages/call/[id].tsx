@@ -118,7 +118,7 @@ export default function Call({ id }: any) {
 
   const props: PropsInterface = {
     rtcProps: {
-      appId: "4a5e78d97b0748fe8d3e44f42b85f93f",
+      appId: "0ebd6ccb4b56484f99125b511f387fa8",
       channel: id,
       uid: agoraUiId,
       token: token, // pass in channel token if the app is in secure mode
